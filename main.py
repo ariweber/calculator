@@ -1,5 +1,6 @@
 import menu
 import operations
+from geometry import *
 
 def main():
     running = True
@@ -7,7 +8,7 @@ def main():
         menu.display_menu()
         choice = menu.get_choice()
 
-        if choice == 6:
+        if choice == 9:
             print("Exiting calculator. Goodbye!")
             running = False
             continue
@@ -33,6 +34,12 @@ def main():
             result = operations.divide(num1, num2)
         elif choice == 5:
             result = operations.power(num1, num2)
+        elif choice == 6:
+            result = area_circle(num1)
+        elif choice == 7:
+            result = area_rectangle(num1, num2)
+        elif choice == 8:
+            result = perimeter_rectangle(num1, num2)
 
         print(f"Result: {result}")
         print("-" * 20)
